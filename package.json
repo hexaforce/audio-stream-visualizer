@@ -1,0 +1,43 @@
+{
+  "name": "audio-stream-visualizer",
+  "version": "1.0.1",
+  "description": "audio stream visualizer",
+  "main": "dist/audio-stream-visualizer.js",
+  "module": "dist/audio-stream-visualizer.js",
+  "exports": {
+    "default": "./dist/audio-stream-visualizer.js"
+  },
+  "files": ["dist"],
+  "scripts": {
+    "fmt": "prettier --write \"./**/*.{js,html}\"",
+    "build": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hexaforce/audio-stream-visualizer.git"
+  },
+  "keywords": [
+    "star",
+    "compass"
+  ],
+  "author": "tomokazu tantaka",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hexaforce/audio-stream-visualizer/issues"
+  },
+  "homepage": "https://github.com/hexaforce/audio-stream-visualizer#readme",
+  "devDependencies": {
+    "prettier": "^3.5.3",
+    "rollup": "^2.79.2",
+    "rollup-plugin-terser": "^7.0.2"
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "bracketSpacing": true,
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true,
+    "jsxSingleQuote": true,
+    "printWidth": 512
+  }
+}

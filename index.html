@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>audio stream visualizer</title>
+    <style>
+      body {
+        background-color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        overflow: hidden;
+      }
+
+      .audio-stream-visualizer {
+        opacity: 0.9;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas class="audio-visualizer-canvas" width="360" height="120"></canvas>
+    <script type="module">
+      import AudioStreamVisualizer from './dist/audio-stream-visualizer.js'
+    
+      const canvas = document.querySelector('canvas.audio-visualizer-canvas')
+    
+      navigator.mediaDevices.getUserMedia({ audio: true, video: false })
+        .then(stream => {
+          const visualizer = new AudioStreamVisualizer(stream, canvas)
+          visualizer.start()
+        })
+        .catch(err => {
+          console.error('マイクの使用に失敗しました:', err)
+        })
+    </script>
+  </body>
+</html>
+
+
